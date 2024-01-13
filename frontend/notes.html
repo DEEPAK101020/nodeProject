@@ -31,7 +31,7 @@
                 Title:inputTitle.value,
                 body:inputbody.value
             }
-            fetch("http://localhost:5000/note/create",{
+            fetch("https://fullstack-z9ok.onrender.com/note/create",{
                 method:"POST",
                 headers:{"Content-type":"application/json",authorization: `Bearer ${localStorage.getItem("token")}`},
                 body:JSON.stringify(details)
@@ -87,7 +87,7 @@
 
 
       function renderdata() {
-        fetch("http://localhost:5000/note/", {
+        fetch("https://fullstack-z9ok.onrender.com/note/", {
           // method:"GET",
           headers: {
             "Content-type": "application/json",
@@ -108,7 +108,7 @@
     //   openEditModel(id,)
 
       function deleteNote(id){
-        fetch(`http://localhost:5000/note/delete/${id}`,
+        fetch(`https://fullstack-z9ok.onrender.com/note/delete/${id}`,
         {
             method:"DELETE",
             headers:{
@@ -133,7 +133,7 @@ function openEditModel(item){
         updatenote(currentitem)
       })
         function updatenote(item){
-          fetch(`http://localhost:5000/note/update/${item._id}`,
+          fetch(`https://fullstack-z9ok.onrender.com/note/update/${item._id}`,
         {
             method:"PATCH",
             headers:{

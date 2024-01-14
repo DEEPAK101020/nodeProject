@@ -49,9 +49,9 @@ notesroute.patch("/update/:updateid",async(req,res)=>{
 
 //delete
 notesroute.delete("/delete/:deleteid",async(req,res)=>{
-    const update=req.params.deleteid;
+    const deleteid=req.params.deleteid;
     // const {updateid}=req.params.updateid
-    const notesfromid=await NotesModel.findById(update)
+    const notesfromid=await NotesModel.findById(deleteid)
     // const notesfromid=await NotesModel.findOne({_id:update})
     if(notesfromid.userID===req.body.userID){
 
